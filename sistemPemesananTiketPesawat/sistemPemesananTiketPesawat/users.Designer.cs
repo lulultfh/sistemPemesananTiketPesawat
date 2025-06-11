@@ -235,6 +235,7 @@
             // 
             // btnImport
             // 
+            this.btnImport.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnImport.Location = new System.Drawing.Point(284, 527);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(159, 42);
@@ -245,6 +246,7 @@
             // 
             // btnAnalisis
             // 
+            this.btnAnalisis.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAnalisis.Location = new System.Drawing.Point(502, 527);
             this.btnAnalisis.Name = "btnAnalisis";
             this.btnAnalisis.Size = new System.Drawing.Size(161, 46);
@@ -255,6 +257,7 @@
             // 
             // lblMessage
             // 
+            this.lblMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMessage.AutoSize = true;
             this.lblMessage.BackColor = System.Drawing.Color.Transparent;
             this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(241)))), ((int)(((byte)(222)))));
