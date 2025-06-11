@@ -23,16 +23,7 @@ namespace sistemPemesananTiketPesawat
 
         }
 
-  
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void pnlPilihan_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnToUser_Click(object sender, EventArgs e)
         {
@@ -90,15 +81,31 @@ namespace sistemPemesananTiketPesawat
             this.Hide();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void logoToHome_Click(object sender, EventArgs e)
         {
             Home homeForm = new Home();
             homeForm.Show();
+            this.Hide();
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            FormReport reportForm = new FormReport();
+            reportForm.Show();
+            this.Hide();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Home homeForm = new Home();
+            homeForm.Show();
+            this.Hide();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            FromLogin logout = new FromLogin();
+            logout.Show();
             this.Hide();
         }
     }

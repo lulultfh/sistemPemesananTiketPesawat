@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tiket));
             this.logoToHome = new System.Windows.Forms.PictureBox();
             this.txtKode = new System.Windows.Forms.TextBox();
-            this.txtIDTerbang = new System.Windows.Forms.TextBox();
-            this.txtIDPesan = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblKode = new System.Windows.Forms.Label();
             this.lblIDFKTerbang = new System.Windows.Forms.Label();
@@ -43,8 +41,13 @@
             this.btnUbah = new System.Windows.Forms.Button();
             this.btnTambah = new System.Windows.Forms.Button();
             this.dgvTiket = new System.Windows.Forms.DataGridView();
-            this.txtIDPnmp = new System.Windows.Forms.TextBox();
             this.lblPenumpang = new System.Windows.Forms.Label();
+            this.cmbIDPsn = new System.Windows.Forms.ComboBox();
+            this.cmbIDPnmp = new System.Windows.Forms.ComboBox();
+            this.cmbIDPnb = new System.Windows.Forms.ComboBox();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnAnalyze = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logoToHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTiket)).BeginInit();
             this.SuspendLayout();
@@ -66,31 +69,15 @@
             this.txtKode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtKode.Location = new System.Drawing.Point(437, 531);
             this.txtKode.Name = "txtKode";
-            this.txtKode.Size = new System.Drawing.Size(378, 26);
+            this.txtKode.Size = new System.Drawing.Size(387, 26);
             this.txtKode.TabIndex = 28;
-            // 
-            // txtIDTerbang
-            // 
-            this.txtIDTerbang.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIDTerbang.Location = new System.Drawing.Point(437, 460);
-            this.txtIDTerbang.Name = "txtIDTerbang";
-            this.txtIDTerbang.Size = new System.Drawing.Size(378, 26);
-            this.txtIDTerbang.TabIndex = 27;
-            // 
-            // txtIDPesan
-            // 
-            this.txtIDPesan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIDPesan.Location = new System.Drawing.Point(437, 312);
-            this.txtIDPesan.Name = "txtIDPesan";
-            this.txtIDPesan.Size = new System.Drawing.Size(378, 26);
-            this.txtIDPesan.TabIndex = 26;
             // 
             // txtID
             // 
             this.txtID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtID.Location = new System.Drawing.Point(437, 235);
+            this.txtID.Location = new System.Drawing.Point(437, 238);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(378, 26);
+            this.txtID.Size = new System.Drawing.Size(387, 26);
             this.txtID.TabIndex = 25;
             // 
             // lblKode
@@ -146,7 +133,6 @@
             this.lblID.Size = new System.Drawing.Size(77, 21);
             this.lblID.TabIndex = 21;
             this.lblID.Text = "ID Tiket";
-            this.lblID.Click += new System.EventHandler(this.lblID_Click);
             // 
             // btnHapus
             // 
@@ -201,18 +187,9 @@
             this.dgvTiket.Name = "dgvTiket";
             this.dgvTiket.RowHeadersWidth = 62;
             this.dgvTiket.RowTemplate.Height = 28;
-            this.dgvTiket.Size = new System.Drawing.Size(497, 629);
+            this.dgvTiket.Size = new System.Drawing.Size(497, 554);
             this.dgvTiket.TabIndex = 30;
             this.dgvTiket.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTiket_CellClick);
-            // 
-            // txtIDPnmp
-            // 
-            this.txtIDPnmp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIDPnmp.Location = new System.Drawing.Point(437, 392);
-            this.txtIDPnmp.Name = "txtIDPnmp";
-            this.txtIDPnmp.Size = new System.Drawing.Size(378, 26);
-            this.txtIDPnmp.TabIndex = 32;
-            this.txtIDPnmp.Click += new System.EventHandler(this.txtIDPnmp_Click);
             // 
             // lblPenumpang
             // 
@@ -228,18 +205,80 @@
             this.lblPenumpang.TabIndex = 31;
             this.lblPenumpang.Text = "ID Penumpang";
             // 
+            // cmbIDPsn
+            // 
+            this.cmbIDPsn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbIDPsn.FormattingEnabled = true;
+            this.cmbIDPsn.Location = new System.Drawing.Point(437, 310);
+            this.cmbIDPsn.Name = "cmbIDPsn";
+            this.cmbIDPsn.Size = new System.Drawing.Size(387, 28);
+            this.cmbIDPsn.TabIndex = 33;
+            // 
+            // cmbIDPnmp
+            // 
+            this.cmbIDPnmp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbIDPnmp.FormattingEnabled = true;
+            this.cmbIDPnmp.Location = new System.Drawing.Point(437, 397);
+            this.cmbIDPnmp.Name = "cmbIDPnmp";
+            this.cmbIDPnmp.Size = new System.Drawing.Size(387, 28);
+            this.cmbIDPnmp.TabIndex = 34;
+            // 
+            // cmbIDPnb
+            // 
+            this.cmbIDPnb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbIDPnb.FormattingEnabled = true;
+            this.cmbIDPnb.Location = new System.Drawing.Point(437, 463);
+            this.cmbIDPnb.Name = "cmbIDPnb";
+            this.cmbIDPnb.Size = new System.Drawing.Size(387, 28);
+            this.cmbIDPnb.TabIndex = 35;
+            // 
+            // btnImport
+            // 
+            this.btnImport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnImport.Location = new System.Drawing.Point(706, 26);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(161, 48);
+            this.btnImport.TabIndex = 36;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // btnAnalyze
+            // 
+            this.btnAnalyze.Location = new System.Drawing.Point(706, 103);
+            this.btnAnalyze.Name = "btnAnalyze";
+            this.btnAnalyze.Size = new System.Drawing.Size(161, 49);
+            this.btnAnalyze.TabIndex = 37;
+            this.btnAnalyze.Text = "Analyze";
+            this.btnAnalyze.UseVisualStyleBackColor = true;
+            this.btnAnalyze.Click += new System.EventHandler(this.btnAnalyze_Click);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.BackColor = System.Drawing.Color.Transparent;
+            this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(241)))), ((int)(((byte)(222)))));
+            this.lblMessage.Location = new System.Drawing.Point(910, 598);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(74, 20);
+            this.lblMessage.TabIndex = 38;
+            this.lblMessage.Text = "Message";
+            // 
             // Tiket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1409, 653);
-            this.Controls.Add(this.txtIDPnmp);
+            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.btnAnalyze);
+            this.Controls.Add(this.btnImport);
+            this.Controls.Add(this.cmbIDPnb);
+            this.Controls.Add(this.cmbIDPnmp);
+            this.Controls.Add(this.cmbIDPsn);
             this.Controls.Add(this.lblPenumpang);
             this.Controls.Add(this.dgvTiket);
             this.Controls.Add(this.txtKode);
-            this.Controls.Add(this.txtIDTerbang);
-            this.Controls.Add(this.txtIDPesan);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblKode);
             this.Controls.Add(this.lblIDFKTerbang);
@@ -264,8 +303,6 @@
 
         private System.Windows.Forms.PictureBox logoToHome;
         private System.Windows.Forms.TextBox txtKode;
-        private System.Windows.Forms.TextBox txtIDTerbang;
-        private System.Windows.Forms.TextBox txtIDPesan;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblKode;
         private System.Windows.Forms.Label lblIDFKTerbang;
@@ -276,7 +313,12 @@
         private System.Windows.Forms.Button btnUbah;
         private System.Windows.Forms.Button btnTambah;
         private System.Windows.Forms.DataGridView dgvTiket;
-        private System.Windows.Forms.TextBox txtIDPnmp;
         private System.Windows.Forms.Label lblPenumpang;
+        private System.Windows.Forms.ComboBox cmbIDPsn;
+        private System.Windows.Forms.ComboBox cmbIDPnmp;
+        private System.Windows.Forms.ComboBox cmbIDPnb;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnAnalyze;
+        private System.Windows.Forms.Label lblMessage;
     }
 }

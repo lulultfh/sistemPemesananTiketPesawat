@@ -58,7 +58,6 @@
             this.lblUname.Size = new System.Drawing.Size(210, 26);
             this.lblUname.TabIndex = 1;
             this.lblUname.Text = "Username / Email";
-            this.lblUname.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtPasswd
             // 
@@ -66,6 +65,7 @@
             this.txtPasswd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.txtPasswd.Location = new System.Drawing.Point(807, 329);
             this.txtPasswd.Name = "txtPasswd";
+            this.txtPasswd.PasswordChar = '*';
             this.txtPasswd.Size = new System.Drawing.Size(492, 26);
             this.txtPasswd.TabIndex = 2;
             // 
@@ -107,9 +107,9 @@
             this.Controls.Add(this.txtPasswd);
             this.Controls.Add(this.lblUname);
             this.Controls.Add(this.txtUname);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FromLogin";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FromLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -21,24 +21,9 @@ namespace sistemPemesananTiketPesawat
             InitializeComponent();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtUname_TextChanged(object sender, EventArgs e)
         {
-
+          
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -60,8 +45,7 @@ namespace sistemPemesananTiketPesawat
                         int count = (int)cekCmd.ExecuteScalar();
                         if (count > 0)
                         {
-                            Home form2 = new Home();
-                            form2.Show();
+                            Home form2 = new Home();                            form2.Show();
                             this.Hide();
                         }
                         else
@@ -77,9 +61,10 @@ namespace sistemPemesananTiketPesawat
             }
         }
 
+
         private void FromLogin_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

@@ -43,6 +43,9 @@
             this.lblNama = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.dgvMaskapai = new System.Windows.Forms.DataGridView();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnAnalyze = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logoToHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaskapai)).BeginInit();
             this.SuspendLayout();
@@ -198,9 +201,44 @@
             this.dgvMaskapai.Name = "dgvMaskapai";
             this.dgvMaskapai.RowHeadersWidth = 62;
             this.dgvMaskapai.RowTemplate.Height = 28;
-            this.dgvMaskapai.Size = new System.Drawing.Size(497, 629);
+            this.dgvMaskapai.Size = new System.Drawing.Size(497, 458);
             this.dgvMaskapai.TabIndex = 30;
             this.dgvMaskapai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaskapai_CellClick);
+            // 
+            // btnImport
+            // 
+            this.btnImport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnImport.Location = new System.Drawing.Point(284, 510);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(161, 48);
+            this.btnImport.TabIndex = 32;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // btnAnalyze
+            // 
+            this.btnAnalyze.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAnalyze.Location = new System.Drawing.Point(504, 510);
+            this.btnAnalyze.Name = "btnAnalyze";
+            this.btnAnalyze.Size = new System.Drawing.Size(161, 48);
+            this.btnAnalyze.TabIndex = 33;
+            this.btnAnalyze.Text = "Analisis";
+            this.btnAnalyze.UseVisualStyleBackColor = true;
+            this.btnAnalyze.Click += new System.EventHandler(this.btnAnalyze_Click);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.BackColor = System.Drawing.Color.Transparent;
+            this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(241)))), ((int)(((byte)(222)))));
+            this.lblMessage.Location = new System.Drawing.Point(896, 491);
+            this.lblMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(74, 20);
+            this.lblMessage.TabIndex = 34;
+            this.lblMessage.Text = "Message";
             // 
             // Maskapai
             // 
@@ -208,6 +246,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1409, 653);
+            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.btnAnalyze);
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.dgvMaskapai);
             this.Controls.Add(this.txtNgr);
             this.Controls.Add(this.txtKode);
@@ -224,6 +265,7 @@
             this.Controls.Add(this.logoToHome);
             this.Name = "Maskapai";
             this.Text = "Maskapai";
+            this.Load += new System.EventHandler(this.Maskapai_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logoToHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaskapai)).EndInit();
             this.ResumeLayout(false);
@@ -247,5 +289,8 @@
         private System.Windows.Forms.Label lblNama;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.DataGridView dgvMaskapai;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnAnalyze;
+        private System.Windows.Forms.Label lblMessage;
     }
 }

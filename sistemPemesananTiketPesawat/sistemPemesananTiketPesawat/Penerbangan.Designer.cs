@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Penerbangan));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnTambah = new System.Windows.Forms.Button();
             this.btnUbah = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -44,27 +43,20 @@
             this.lblAsal = new System.Windows.Forms.Label();
             this.txtAsal = new System.Windows.Forms.TextBox();
             this.lblBerangkat = new System.Windows.Forms.Label();
-            this.txtBerangkat = new System.Windows.Forms.TextBox();
             this.lblDatang = new System.Windows.Forms.Label();
-            this.txtKedatangan = new System.Windows.Forms.TextBox();
             this.lblHarga = new System.Windows.Forms.Label();
             this.txtHarga = new System.Windows.Forms.TextBox();
             this.lblIDFK = new System.Windows.Forms.Label();
-            this.txtIDFK = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.logoToHome = new System.Windows.Forms.PictureBox();
+            this.cmbIDFK = new System.Windows.Forms.ComboBox();
+            this.dtBerangkat = new System.Windows.Forms.DateTimePicker();
+            this.dtKedatangan = new System.Windows.Forms.DateTimePicker();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnAnalyze = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPenerbangan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoToHome)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(188, 136);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // btnTambah
             // 
@@ -119,7 +111,7 @@
             this.dgvPenerbangan.Name = "dgvPenerbangan";
             this.dgvPenerbangan.RowHeadersWidth = 62;
             this.dgvPenerbangan.RowTemplate.Height = 28;
-            this.dgvPenerbangan.Size = new System.Drawing.Size(497, 629);
+            this.dgvPenerbangan.Size = new System.Drawing.Size(497, 563);
             this.dgvPenerbangan.TabIndex = 7;
             this.dgvPenerbangan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPenerbangan_CellClick);
             // 
@@ -156,7 +148,6 @@
             this.lblNoP.Size = new System.Drawing.Size(154, 21);
             this.lblNoP.TabIndex = 12;
             this.lblNoP.Text = "No Penerbangan";
-            this.lblNoP.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtNoPenerbangan
             // 
@@ -217,17 +208,9 @@
             this.lblBerangkat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.lblBerangkat.Location = new System.Drawing.Point(260, 394);
             this.lblBerangkat.Name = "lblBerangkat";
-            this.lblBerangkat.Size = new System.Drawing.Size(158, 21);
+            this.lblBerangkat.Size = new System.Drawing.Size(179, 21);
             this.lblBerangkat.TabIndex = 18;
-            this.lblBerangkat.Text = "Waktu Berangkat";
-            // 
-            // txtBerangkat
-            // 
-            this.txtBerangkat.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBerangkat.Location = new System.Drawing.Point(451, 389);
-            this.txtBerangkat.Name = "txtBerangkat";
-            this.txtBerangkat.Size = new System.Drawing.Size(378, 26);
-            this.txtBerangkat.TabIndex = 19;
+            this.lblBerangkat.Text = "Waktu Keberangkat";
             // 
             // lblDatang
             // 
@@ -241,14 +224,6 @@
             this.lblDatang.Size = new System.Drawing.Size(172, 21);
             this.lblDatang.TabIndex = 20;
             this.lblDatang.Text = "Waktu Kedatangan";
-            // 
-            // txtKedatangan
-            // 
-            this.txtKedatangan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtKedatangan.Location = new System.Drawing.Point(451, 444);
-            this.txtKedatangan.Name = "txtKedatangan";
-            this.txtKedatangan.Size = new System.Drawing.Size(378, 26);
-            this.txtKedatangan.TabIndex = 21;
             // 
             // lblHarga
             // 
@@ -284,13 +259,73 @@
             this.lblIDFK.TabIndex = 24;
             this.lblIDFK.Text = "ID Maskapai";
             // 
-            // txtIDFK
+            // logoToHome
             // 
-            this.txtIDFK.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIDFK.Location = new System.Drawing.Point(451, 552);
-            this.txtIDFK.Name = "txtIDFK";
-            this.txtIDFK.Size = new System.Drawing.Size(378, 26);
-            this.txtIDFK.TabIndex = 25;
+            this.logoToHome.BackColor = System.Drawing.Color.Transparent;
+            this.logoToHome.Image = ((System.Drawing.Image)(resources.GetObject("logoToHome.Image")));
+            this.logoToHome.Location = new System.Drawing.Point(12, 38);
+            this.logoToHome.Name = "logoToHome";
+            this.logoToHome.Size = new System.Drawing.Size(188, 136);
+            this.logoToHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.logoToHome.TabIndex = 26;
+            this.logoToHome.TabStop = false;
+            this.logoToHome.Click += new System.EventHandler(this.logoToHome_Click);
+            // 
+            // cmbIDFK
+            // 
+            this.cmbIDFK.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbIDFK.FormattingEnabled = true;
+            this.cmbIDFK.Location = new System.Drawing.Point(451, 554);
+            this.cmbIDFK.Name = "cmbIDFK";
+            this.cmbIDFK.Size = new System.Drawing.Size(378, 28);
+            this.cmbIDFK.TabIndex = 27;
+            // 
+            // dtBerangkat
+            // 
+            this.dtBerangkat.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtBerangkat.Location = new System.Drawing.Point(451, 389);
+            this.dtBerangkat.Name = "dtBerangkat";
+            this.dtBerangkat.Size = new System.Drawing.Size(378, 26);
+            this.dtBerangkat.TabIndex = 28;
+            // 
+            // dtKedatangan
+            // 
+            this.dtKedatangan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtKedatangan.Location = new System.Drawing.Point(451, 442);
+            this.dtKedatangan.Name = "dtKedatangan";
+            this.dtKedatangan.Size = new System.Drawing.Size(378, 26);
+            this.dtKedatangan.TabIndex = 29;
+            // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(694, 36);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(145, 52);
+            this.btnImport.TabIndex = 30;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // btnAnalyze
+            // 
+            this.btnAnalyze.Location = new System.Drawing.Point(694, 111);
+            this.btnAnalyze.Name = "btnAnalyze";
+            this.btnAnalyze.Size = new System.Drawing.Size(145, 48);
+            this.btnAnalyze.TabIndex = 31;
+            this.btnAnalyze.Text = "Analyze";
+            this.btnAnalyze.UseVisualStyleBackColor = true;
+            this.btnAnalyze.Click += new System.EventHandler(this.btnAnalyze_Click);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.BackColor = System.Drawing.Color.Transparent;
+            this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(241)))), ((int)(((byte)(222)))));
+            this.lblMessage.Location = new System.Drawing.Point(896, 593);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(74, 20);
+            this.lblMessage.TabIndex = 32;
+            this.lblMessage.Text = "Message";
             // 
             // Penerbangan
             // 
@@ -298,13 +333,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1409, 653);
-            this.Controls.Add(this.txtIDFK);
+            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.btnAnalyze);
+            this.Controls.Add(this.btnImport);
+            this.Controls.Add(this.dtKedatangan);
+            this.Controls.Add(this.dtBerangkat);
+            this.Controls.Add(this.cmbIDFK);
+            this.Controls.Add(this.logoToHome);
             this.Controls.Add(this.lblIDFK);
             this.Controls.Add(this.txtHarga);
             this.Controls.Add(this.lblHarga);
-            this.Controls.Add(this.txtKedatangan);
             this.Controls.Add(this.lblDatang);
-            this.Controls.Add(this.txtBerangkat);
             this.Controls.Add(this.lblBerangkat);
             this.Controls.Add(this.txtAsal);
             this.Controls.Add(this.lblAsal);
@@ -319,19 +358,17 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnUbah);
             this.Controls.Add(this.btnTambah);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "Penerbangan";
             this.Text = "penebangan";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.Penerbangan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPenerbangan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoToHome)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnTambah;
         private System.Windows.Forms.Button btnUbah;
         private System.Windows.Forms.Button btnRefresh;
@@ -346,12 +383,16 @@
         private System.Windows.Forms.Label lblAsal;
         private System.Windows.Forms.TextBox txtAsal;
         private System.Windows.Forms.Label lblBerangkat;
-        private System.Windows.Forms.TextBox txtBerangkat;
         private System.Windows.Forms.Label lblDatang;
-        private System.Windows.Forms.TextBox txtKedatangan;
         private System.Windows.Forms.Label lblHarga;
         private System.Windows.Forms.TextBox txtHarga;
         private System.Windows.Forms.Label lblIDFK;
-        private System.Windows.Forms.TextBox txtIDFK;
+        private System.Windows.Forms.PictureBox logoToHome;
+        private System.Windows.Forms.ComboBox cmbIDFK;
+        private System.Windows.Forms.DateTimePicker dtBerangkat;
+        private System.Windows.Forms.DateTimePicker dtKedatangan;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnAnalyze;
+        private System.Windows.Forms.Label lblMessage;
     }
 }

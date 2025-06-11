@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pemesanan));
-            this.txtIDFK = new System.Windows.Forms.TextBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
-            this.txtWaktu = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblIDFK = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -43,33 +40,15 @@
             this.btnTambah = new System.Windows.Forms.Button();
             this.logoToHome = new System.Windows.Forms.PictureBox();
             this.dgvPemesanan = new System.Windows.Forms.DataGridView();
+            this.cmbIDPel = new System.Windows.Forms.ComboBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.waktu = new System.Windows.Forms.DateTimePicker();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnAnalyze = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logoToHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPemesanan)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtIDFK
-            // 
-            this.txtIDFK.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIDFK.Location = new System.Drawing.Point(427, 477);
-            this.txtIDFK.Name = "txtIDFK";
-            this.txtIDFK.Size = new System.Drawing.Size(378, 26);
-            this.txtIDFK.TabIndex = 26;
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtStatus.Location = new System.Drawing.Point(427, 406);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(378, 26);
-            this.txtStatus.TabIndex = 25;
-            // 
-            // txtWaktu
-            // 
-            this.txtWaktu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtWaktu.Location = new System.Drawing.Point(427, 330);
-            this.txtWaktu.Name = "txtWaktu";
-            this.txtWaktu.Size = new System.Drawing.Size(378, 26);
-            this.txtWaktu.TabIndex = 24;
             // 
             // txtID
             // 
@@ -89,9 +68,9 @@
             this.lblIDFK.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.lblIDFK.Location = new System.Drawing.Point(281, 477);
             this.lblIDFK.Name = "lblIDFK";
-            this.lblIDFK.Size = new System.Drawing.Size(73, 21);
+            this.lblIDFK.Size = new System.Drawing.Size(124, 21);
             this.lblIDFK.TabIndex = 22;
-            this.lblIDFK.Text = "ID User";
+            this.lblIDFK.Text = "ID Pelanggan";
             // 
             // lblStatus
             // 
@@ -198,9 +177,70 @@
             this.dgvPemesanan.Name = "dgvPemesanan";
             this.dgvPemesanan.RowHeadersWidth = 62;
             this.dgvPemesanan.RowTemplate.Height = 28;
-            this.dgvPemesanan.Size = new System.Drawing.Size(497, 629);
+            this.dgvPemesanan.Size = new System.Drawing.Size(497, 527);
             this.dgvPemesanan.TabIndex = 28;
             this.dgvPemesanan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPemesanan_CellClick);
+            // 
+            // cmbIDPel
+            // 
+            this.cmbIDPel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbIDPel.FormattingEnabled = true;
+            this.cmbIDPel.Location = new System.Drawing.Point(427, 477);
+            this.cmbIDPel.Name = "cmbIDPel";
+            this.cmbIDPel.Size = new System.Drawing.Size(378, 28);
+            this.cmbIDPel.TabIndex = 30;
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(427, 411);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(378, 28);
+            this.cmbStatus.TabIndex = 31;
+            // 
+            // waktu
+            // 
+            this.waktu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.waktu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.waktu.Location = new System.Drawing.Point(427, 331);
+            this.waktu.Name = "waktu";
+            this.waktu.Size = new System.Drawing.Size(378, 26);
+            this.waktu.TabIndex = 32;
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.BackColor = System.Drawing.Color.Transparent;
+            this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(241)))), ((int)(((byte)(222)))));
+            this.lblMessage.Location = new System.Drawing.Point(904, 575);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(74, 20);
+            this.lblMessage.TabIndex = 33;
+            this.lblMessage.Text = "Message";
+            // 
+            // btnImport
+            // 
+            this.btnImport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnImport.Location = new System.Drawing.Point(284, 536);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(161, 48);
+            this.btnImport.TabIndex = 34;
+            this.btnImport.Text = "Import Data";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // btnAnalyze
+            // 
+            this.btnAnalyze.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAnalyze.Location = new System.Drawing.Point(504, 536);
+            this.btnAnalyze.Name = "btnAnalyze";
+            this.btnAnalyze.Size = new System.Drawing.Size(161, 48);
+            this.btnAnalyze.TabIndex = 35;
+            this.btnAnalyze.Text = "Analisis";
+            this.btnAnalyze.UseVisualStyleBackColor = true;
+            this.btnAnalyze.Click += new System.EventHandler(this.btnAnalyze_Click);
             // 
             // Pemesanan
             // 
@@ -208,11 +248,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1409, 653);
+            this.Controls.Add(this.btnAnalyze);
+            this.Controls.Add(this.btnImport);
+            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.waktu);
+            this.Controls.Add(this.cmbStatus);
+            this.Controls.Add(this.cmbIDPel);
             this.Controls.Add(this.logoToHome);
             this.Controls.Add(this.dgvPemesanan);
-            this.Controls.Add(this.txtIDFK);
-            this.Controls.Add(this.txtStatus);
-            this.Controls.Add(this.txtWaktu);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblIDFK);
             this.Controls.Add(this.lblStatus);
@@ -233,9 +276,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtIDFK;
-        private System.Windows.Forms.TextBox txtStatus;
-        private System.Windows.Forms.TextBox txtWaktu;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblIDFK;
         private System.Windows.Forms.Label lblStatus;
@@ -247,5 +287,11 @@
         private System.Windows.Forms.Button btnTambah;
         private System.Windows.Forms.PictureBox logoToHome;
         private System.Windows.Forms.DataGridView dgvPemesanan;
+        private System.Windows.Forms.ComboBox cmbIDPel;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.DateTimePicker waktu;
+        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnAnalyze;
     }
 }

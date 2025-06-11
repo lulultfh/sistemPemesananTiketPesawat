@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Penumpang));
-            this.txtJK = new System.Windows.Forms.TextBox();
-            this.txtTgl = new System.Windows.Forms.TextBox();
             this.txtNama = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblJK = new System.Windows.Forms.Label();
@@ -45,26 +43,14 @@
             this.lblKwn = new System.Windows.Forms.Label();
             this.dgvPenumpang = new System.Windows.Forms.DataGridView();
             this.logoToHome = new System.Windows.Forms.PictureBox();
+            this.cmbJK = new MetroFramework.Controls.MetroComboBox();
+            this.dtTgl = new System.Windows.Forms.DateTimePicker();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnAnalyze = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPenumpang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoToHome)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtJK
-            // 
-            this.txtJK.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtJK.Location = new System.Drawing.Point(449, 381);
-            this.txtJK.Name = "txtJK";
-            this.txtJK.Size = new System.Drawing.Size(378, 26);
-            this.txtJK.TabIndex = 40;
-            this.txtJK.TextChanged += new System.EventHandler(this.txtKode_TextChanged);
-            // 
-            // txtTgl
-            // 
-            this.txtTgl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTgl.Location = new System.Drawing.Point(449, 328);
-            this.txtTgl.Name = "txtTgl";
-            this.txtTgl.Size = new System.Drawing.Size(378, 26);
-            this.txtTgl.TabIndex = 39;
             // 
             // txtNama
             // 
@@ -213,7 +199,7 @@
             this.dgvPenumpang.Name = "dgvPenumpang";
             this.dgvPenumpang.RowHeadersWidth = 62;
             this.dgvPenumpang.RowTemplate.Height = 28;
-            this.dgvPenumpang.Size = new System.Drawing.Size(497, 629);
+            this.dgvPenumpang.Size = new System.Drawing.Size(497, 568);
             this.dgvPenumpang.TabIndex = 43;
             this.dgvPenumpang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPenumpang_CellClick);
             // 
@@ -229,18 +215,74 @@
             this.logoToHome.TabStop = false;
             this.logoToHome.Click += new System.EventHandler(this.logoToHome_Click);
             // 
+            // cmbJK
+            // 
+            this.cmbJK.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbJK.FormattingEnabled = true;
+            this.cmbJK.ItemHeight = 23;
+            this.cmbJK.Location = new System.Drawing.Point(449, 373);
+            this.cmbJK.Name = "cmbJK";
+            this.cmbJK.Size = new System.Drawing.Size(378, 29);
+            this.cmbJK.TabIndex = 45;
+            this.cmbJK.UseSelectable = true;
+            // 
+            // dtTgl
+            // 
+            this.dtTgl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtTgl.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtTgl.Location = new System.Drawing.Point(449, 328);
+            this.dtTgl.Name = "dtTgl";
+            this.dtTgl.Size = new System.Drawing.Size(378, 26);
+            this.dtTgl.TabIndex = 46;
+            // 
+            // btnImport
+            // 
+            this.btnImport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnImport.Location = new System.Drawing.Point(308, 513);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(161, 48);
+            this.btnImport.TabIndex = 48;
+            this.btnImport.Text = "Import Data";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // btnAnalyze
+            // 
+            this.btnAnalyze.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAnalyze.Location = new System.Drawing.Point(528, 513);
+            this.btnAnalyze.Name = "btnAnalyze";
+            this.btnAnalyze.Size = new System.Drawing.Size(161, 48);
+            this.btnAnalyze.TabIndex = 49;
+            this.btnAnalyze.Text = "Analisis";
+            this.btnAnalyze.UseVisualStyleBackColor = true;
+            this.btnAnalyze.Click += new System.EventHandler(this.btnAnalyze_Click);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.BackColor = System.Drawing.Color.Transparent;
+            this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(241)))), ((int)(((byte)(222)))));
+            this.lblMessage.Location = new System.Drawing.Point(905, 609);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(74, 20);
+            this.lblMessage.TabIndex = 50;
+            this.lblMessage.Text = "Message";
+            // 
             // Penumpang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1409, 653);
+            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.btnAnalyze);
+            this.Controls.Add(this.btnImport);
+            this.Controls.Add(this.dtTgl);
+            this.Controls.Add(this.cmbJK);
             this.Controls.Add(this.logoToHome);
             this.Controls.Add(this.dgvPenumpang);
             this.Controls.Add(this.lblKwn);
             this.Controls.Add(this.txtKwn);
-            this.Controls.Add(this.txtJK);
-            this.Controls.Add(this.txtTgl);
             this.Controls.Add(this.txtNama);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblJK);
@@ -262,9 +304,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtJK;
-        private System.Windows.Forms.TextBox txtTgl;
         private System.Windows.Forms.TextBox txtNama;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblJK;
@@ -279,5 +318,10 @@
         private System.Windows.Forms.Label lblKwn;
         private System.Windows.Forms.DataGridView dgvPenumpang;
         private System.Windows.Forms.PictureBox logoToHome;
+        private MetroFramework.Controls.MetroComboBox cmbJK;
+        private System.Windows.Forms.DateTimePicker dtTgl;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnAnalyze;
+        private System.Windows.Forms.Label lblMessage;
     }
 }

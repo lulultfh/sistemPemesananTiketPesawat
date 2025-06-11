@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pembayaran));
-            this.txtIDFK = new System.Windows.Forms.TextBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.txtJumlah = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblIDFk = new System.Windows.Forms.Label();
@@ -43,25 +41,15 @@
             this.btnTambah = new System.Windows.Forms.Button();
             this.dgvPembayaran = new System.Windows.Forms.DataGridView();
             this.logoToHome = new System.Windows.Forms.PictureBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.cmbIDFK = new System.Windows.Forms.ComboBox();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnAnalisis = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtBayar = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPembayaran)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoToHome)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtIDFK
-            // 
-            this.txtIDFK.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIDFK.Location = new System.Drawing.Point(475, 417);
-            this.txtIDFK.Name = "txtIDFK";
-            this.txtIDFK.Size = new System.Drawing.Size(378, 26);
-            this.txtIDFK.TabIndex = 52;
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtStatus.Location = new System.Drawing.Point(475, 364);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(378, 26);
-            this.txtStatus.TabIndex = 51;
             // 
             // txtJumlah
             // 
@@ -87,7 +75,7 @@
             this.lblIDFk.Font = new System.Drawing.Font("Inter SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIDFk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.lblIDFk.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.lblIDFk.Location = new System.Drawing.Point(299, 417);
+            this.lblIDFk.Location = new System.Drawing.Point(299, 455);
             this.lblIDFk.Name = "lblIDFk";
             this.lblIDFk.Size = new System.Drawing.Size(134, 21);
             this.lblIDFk.TabIndex = 48;
@@ -186,7 +174,7 @@
             this.dgvPembayaran.Name = "dgvPembayaran";
             this.dgvPembayaran.RowHeadersWidth = 62;
             this.dgvPembayaran.RowTemplate.Height = 28;
-            this.dgvPembayaran.Size = new System.Drawing.Size(497, 629);
+            this.dgvPembayaran.Size = new System.Drawing.Size(497, 435);
             this.dgvPembayaran.TabIndex = 53;
             this.dgvPembayaran.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPembayaran_CellClick);
             // 
@@ -202,16 +190,84 @@
             this.logoToHome.TabStop = false;
             this.logoToHome.Click += new System.EventHandler(this.logoToHome_Click);
             // 
+            // cmbStatus
+            // 
+            this.cmbStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(475, 362);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(378, 28);
+            this.cmbStatus.TabIndex = 56;
+            // 
+            // cmbIDFK
+            // 
+            this.cmbIDFK.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbIDFK.FormattingEnabled = true;
+            this.cmbIDFK.Location = new System.Drawing.Point(475, 448);
+            this.cmbIDFK.Name = "cmbIDFK";
+            this.cmbIDFK.Size = new System.Drawing.Size(378, 28);
+            this.cmbIDFK.TabIndex = 57;
+            // 
+            // btnImport
+            // 
+            this.btnImport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnImport.Location = new System.Drawing.Point(334, 504);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(161, 48);
+            this.btnImport.TabIndex = 59;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // btnAnalisis
+            // 
+            this.btnAnalisis.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAnalisis.Location = new System.Drawing.Point(554, 504);
+            this.btnAnalisis.Name = "btnAnalisis";
+            this.btnAnalisis.Size = new System.Drawing.Size(161, 48);
+            this.btnAnalisis.TabIndex = 60;
+            this.btnAnalisis.Text = "Analisis";
+            this.btnAnalisis.UseVisualStyleBackColor = true;
+            this.btnAnalisis.Click += new System.EventHandler(this.btnAnalisis_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Inter SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label1.Location = new System.Drawing.Point(299, 411);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 21);
+            this.label1.TabIndex = 61;
+            this.label1.Text = "Tanggal Bayar";
+            // 
+            // dtBayar
+            // 
+            this.dtBayar.AllowDrop = true;
+            this.dtBayar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtBayar.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtBayar.Location = new System.Drawing.Point(475, 407);
+            this.dtBayar.Name = "dtBayar";
+            this.dtBayar.Size = new System.Drawing.Size(378, 26);
+            this.dtBayar.TabIndex = 62;
+            // 
             // Pembayaran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1409, 653);
+            this.Controls.Add(this.dtBayar);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAnalisis);
+            this.Controls.Add(this.btnImport);
+            this.Controls.Add(this.cmbIDFK);
+            this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.logoToHome);
             this.Controls.Add(this.dgvPembayaran);
-            this.Controls.Add(this.txtIDFK);
-            this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.txtJumlah);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblIDFk);
@@ -224,6 +280,7 @@
             this.Controls.Add(this.btnTambah);
             this.Name = "Pembayaran";
             this.Text = "Pembayaran";
+            this.Load += new System.EventHandler(this.Pembayaran_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPembayaran)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoToHome)).EndInit();
             this.ResumeLayout(false);
@@ -232,9 +289,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtIDFK;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.TextBox txtJumlah;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblIDFk;
@@ -247,5 +301,11 @@
         private System.Windows.Forms.Button btnTambah;
         private System.Windows.Forms.DataGridView dgvPembayaran;
         private System.Windows.Forms.PictureBox logoToHome;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.ComboBox cmbIDFK;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnAnalisis;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtBayar;
     }
 }

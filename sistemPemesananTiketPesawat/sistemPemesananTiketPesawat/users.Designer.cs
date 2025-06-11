@@ -45,6 +45,9 @@
             this.logoToHome = new System.Windows.Forms.PictureBox();
             this.txtPasswd = new System.Windows.Forms.TextBox();
             this.lblPasswd = new System.Windows.Forms.Label();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnAnalisis = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoToHome)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +61,7 @@
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 62;
             this.dgvUsers.RowTemplate.Height = 28;
-            this.dgvUsers.Size = new System.Drawing.Size(497, 629);
+            this.dgvUsers.Size = new System.Drawing.Size(497, 504);
             this.dgvUsers.TabIndex = 1;
             this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
             // 
@@ -115,10 +118,9 @@
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.lblID.Location = new System.Drawing.Point(279, 260);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(73, 21);
+            this.lblID.Size = new System.Drawing.Size(124, 21);
             this.lblID.TabIndex = 6;
-            this.lblID.Text = "ID User";
-            this.lblID.Click += new System.EventHandler(this.lblID_Click);
+            this.lblID.Text = "ID Pelanggan";
             // 
             // lblNama
             // 
@@ -132,7 +134,6 @@
             this.lblNama.Size = new System.Drawing.Size(59, 21);
             this.lblNama.TabIndex = 7;
             this.lblNama.Text = "Nama";
-            this.lblNama.Click += new System.EventHandler(this.lblNama_Click);
             // 
             // lblMail
             // 
@@ -147,7 +148,6 @@
             this.lblMail.Size = new System.Drawing.Size(57, 21);
             this.lblMail.TabIndex = 8;
             this.lblMail.Text = "Email";
-            this.lblMail.Click += new System.EventHandler(this.lblMail_Click);
             // 
             // lblTelp
             // 
@@ -162,7 +162,6 @@
             this.lblTelp.Size = new System.Drawing.Size(81, 21);
             this.lblTelp.TabIndex = 9;
             this.lblTelp.Text = "No Telp.";
-            this.lblTelp.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtID
             // 
@@ -234,12 +233,46 @@
             this.lblPasswd.TabIndex = 16;
             this.lblPasswd.Text = "Password";
             // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(284, 527);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(159, 42);
+            this.btnImport.TabIndex = 19;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // btnAnalisis
+            // 
+            this.btnAnalisis.Location = new System.Drawing.Point(502, 527);
+            this.btnAnalisis.Name = "btnAnalisis";
+            this.btnAnalisis.Size = new System.Drawing.Size(161, 46);
+            this.btnAnalisis.TabIndex = 20;
+            this.btnAnalisis.Text = "Analisis";
+            this.btnAnalisis.UseVisualStyleBackColor = true;
+            this.btnAnalisis.Click += new System.EventHandler(this.btnAnalisis_Click);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.BackColor = System.Drawing.Color.Transparent;
+            this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(241)))), ((int)(((byte)(222)))));
+            this.lblMessage.Location = new System.Drawing.Point(896, 527);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(74, 20);
+            this.lblMessage.TabIndex = 21;
+            this.lblMessage.Text = "Message";
+            // 
             // users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1409, 653);
+            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.btnAnalisis);
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.txtPasswd);
             this.Controls.Add(this.lblPasswd);
             this.Controls.Add(this.logoToHome);
@@ -283,5 +316,8 @@
         private System.Windows.Forms.PictureBox logoToHome;
         private System.Windows.Forms.TextBox txtPasswd;
         private System.Windows.Forms.Label lblPasswd;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnAnalisis;
+        private System.Windows.Forms.Label lblMessage;
     }
 }

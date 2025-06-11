@@ -39,8 +39,10 @@
             this.btnToPembayaran = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
             this.logoToHome = new System.Windows.Forms.PictureBox();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logoToHome)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +69,7 @@
             this.btnToUser.Name = "btnToUser";
             this.btnToUser.Size = new System.Drawing.Size(200, 200);
             this.btnToUser.TabIndex = 2;
-            this.btnToUser.Text = "Kelola User";
+            this.btnToUser.Text = "Kelola Pelanggan";
             this.btnToUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnToUser.UseVisualStyleBackColor = false;
             this.btnToUser.Click += new System.EventHandler(this.btnToUser_Click);
@@ -182,24 +184,24 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Halo, Super Admin!";
             // 
-            // button1
+            // btnHome
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 193);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 73);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Home";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnHome.BackColor = System.Drawing.Color.Transparent;
+            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(107)))));
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(12, 193);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(192, 73);
+            this.btnHome.TabIndex = 1;
+            this.btnHome.Text = "Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // logoToHome
             // 
@@ -213,6 +215,44 @@
             this.logoToHome.TabStop = false;
             this.logoToHome.Click += new System.EventHandler(this.logoToHome_Click);
             // 
+            // btnReport
+            // 
+            this.btnReport.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnReport.BackColor = System.Drawing.Color.Transparent;
+            this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReport.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(107)))));
+            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
+            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReport.Location = new System.Drawing.Point(12, 293);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(192, 73);
+            this.btnReport.TabIndex = 17;
+            this.btnReport.Text = "Report";
+            this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(107)))));
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
+            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogOut.Location = new System.Drawing.Point(12, 396);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(192, 73);
+            this.btnLogOut.TabIndex = 18;
+            this.btnLogOut.Text = "Logout";
+            this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -221,8 +261,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(241)))), ((int)(((byte)(222)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1409, 653);
+            this.Controls.Add(this.btnLogOut);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.logoToHome);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnHome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnToPembayaran);
@@ -254,7 +296,9 @@
         private System.Windows.Forms.Button btnToPembayaran;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.PictureBox logoToHome;
+        private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }
