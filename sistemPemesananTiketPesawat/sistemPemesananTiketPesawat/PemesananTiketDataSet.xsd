@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PemesananTiketDataSet" targetNamespace="http://tempuri.org/PemesananTiketDataSet.xsd" xmlns:mstns="http://tempuri.org/PemesananTiketDataSet.xsd" xmlns="http://tempuri.org/PemesananTiketDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="sistemPemesananTiketPesawatConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="sistemPemesananTiketPesawatConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.sistemPemesananTiketPesawat.Properties.Settings.GlobalReference.Default.sistemPemesananTiketPesawatConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="sistemPemesananTiketPesawatConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT p.pemesanan_id, pel.email AS email_pelanggan, p.waktuPesan, p.statusPesan, t.kodeTiket, pn.namaLengkap AS nama_penumpang, pnb.noPenerbangan, pnb.asal, pnb.tujuan, pnb.waktuBrgkt, m.nama_maskapai, pnb.harga
+FROM   pemesanan AS p INNER JOIN
+             pelanggan AS pel ON p.id_pelanggan = pel.id_pelanggan INNER JOIN
+             tiket AS t ON p.pemesanan_id = t.pemesanan_id INNER JOIN
+             penumpang AS pn ON t.id_penumpang = pn.id_Penumpang INNER JOIN
+             penerbangan AS pnb ON t.id_penerbangan = pnb.id_penerbangan INNER JOIN
+             maskapai AS m ON pnb.id_maskapai = m.id_maskapai
+ORDER BY p.waktuPesan DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="pemesanan_id" DataSetColumn="pemesanan_id" />
+              <Mapping SourceColumn="email_pelanggan" DataSetColumn="email_pelanggan" />
+              <Mapping SourceColumn="waktuPesan" DataSetColumn="waktuPesan" />
+              <Mapping SourceColumn="statusPesan" DataSetColumn="statusPesan" />
+              <Mapping SourceColumn="kodeTiket" DataSetColumn="kodeTiket" />
+              <Mapping SourceColumn="nama_penumpang" DataSetColumn="nama_penumpang" />
+              <Mapping SourceColumn="noPenerbangan" DataSetColumn="noPenerbangan" />
+              <Mapping SourceColumn="asal" DataSetColumn="asal" />
+              <Mapping SourceColumn="tujuan" DataSetColumn="tujuan" />
+              <Mapping SourceColumn="waktuBrgkt" DataSetColumn="waktuBrgkt" />
+              <Mapping SourceColumn="nama_maskapai" DataSetColumn="nama_maskapai" />
+              <Mapping SourceColumn="harga" DataSetColumn="harga" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PemesananTiketDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="PemesananTiketDataSet" msprop:Generator_DataSetName="PemesananTiketDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pemesanan_id" msprop:Generator_ColumnPropNameInRow="pemesanan_id" msprop:Generator_ColumnPropNameInTable="pemesanan_idColumn" msprop:Generator_ColumnVarNameInTable="columnpemesanan_id" msprop:Generator_UserColumnName="pemesanan_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="email_pelanggan" msprop:Generator_ColumnPropNameInRow="email_pelanggan" msprop:Generator_ColumnPropNameInTable="email_pelangganColumn" msprop:Generator_ColumnVarNameInTable="columnemail_pelanggan" msprop:Generator_UserColumnName="email_pelanggan">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="waktuPesan" msprop:Generator_ColumnPropNameInRow="waktuPesan" msprop:Generator_ColumnPropNameInTable="waktuPesanColumn" msprop:Generator_ColumnVarNameInTable="columnwaktuPesan" msprop:Generator_UserColumnName="waktuPesan" type="xs:dateTime" />
+              <xs:element name="statusPesan" msprop:Generator_ColumnPropNameInRow="statusPesan" msprop:Generator_ColumnPropNameInTable="statusPesanColumn" msprop:Generator_ColumnVarNameInTable="columnstatusPesan" msprop:Generator_UserColumnName="statusPesan">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="kodeTiket" msprop:Generator_ColumnPropNameInRow="kodeTiket" msprop:Generator_ColumnPropNameInTable="kodeTiketColumn" msprop:Generator_ColumnVarNameInTable="columnkodeTiket" msprop:Generator_UserColumnName="kodeTiket" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nama_penumpang" msprop:Generator_ColumnPropNameInRow="nama_penumpang" msprop:Generator_ColumnPropNameInTable="nama_penumpangColumn" msprop:Generator_ColumnVarNameInTable="columnnama_penumpang" msprop:Generator_UserColumnName="nama_penumpang">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="noPenerbangan" msprop:Generator_ColumnPropNameInRow="noPenerbangan" msprop:Generator_ColumnPropNameInTable="noPenerbanganColumn" msprop:Generator_ColumnVarNameInTable="columnnoPenerbangan" msprop:Generator_UserColumnName="noPenerbangan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="asal" msprop:Generator_ColumnPropNameInRow="asal" msprop:Generator_ColumnPropNameInTable="asalColumn" msprop:Generator_ColumnVarNameInTable="columnasal" msprop:Generator_UserColumnName="asal">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tujuan" msprop:Generator_ColumnPropNameInRow="tujuan" msprop:Generator_ColumnPropNameInTable="tujuanColumn" msprop:Generator_ColumnVarNameInTable="columntujuan" msprop:Generator_UserColumnName="tujuan">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="waktuBrgkt" msprop:Generator_ColumnPropNameInRow="waktuBrgkt" msprop:Generator_ColumnPropNameInTable="waktuBrgktColumn" msprop:Generator_ColumnVarNameInTable="columnwaktuBrgkt" msprop:Generator_UserColumnName="waktuBrgkt" type="xs:dateTime" />
+              <xs:element name="nama_maskapai" msprop:Generator_ColumnPropNameInRow="nama_maskapai" msprop:Generator_ColumnPropNameInTable="nama_maskapaiColumn" msprop:Generator_ColumnVarNameInTable="columnnama_maskapai" msprop:Generator_UserColumnName="nama_maskapai">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="harga" msprop:Generator_ColumnPropNameInRow="harga" msprop:Generator_ColumnPropNameInTable="hargaColumn" msprop:Generator_ColumnVarNameInTable="columnharga" msprop:Generator_UserColumnName="harga" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:pemesanan_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
